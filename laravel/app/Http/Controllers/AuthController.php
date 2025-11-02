@@ -50,7 +50,7 @@ class AuthController extends Controller
         ]);
     }
 
-    public function check(Request $request)
+    public function check()
     {
         // 認証済みユーザーを取得
         $user = JWTAuth::parseToken()->authenticate(); 
