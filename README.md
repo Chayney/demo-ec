@@ -48,6 +48,10 @@ $php artisan db:seed
 ### react上  
 $cp .env.example .env  
 
+## ダミーユーザー  
+・email: test@example.com  
+・password: password  
+
 ## URL
 ・laravel-api: http://localhost/api/todos    
 ・phpMyAdmin: http://localhost:8080  
