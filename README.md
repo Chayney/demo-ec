@@ -2,6 +2,10 @@
 laravelAPIとReactのViteを繋いだ環境です。  
 ダミーデータとTodo一覧を取得するAPIは既に用意されています。  
 
+## 認証方式  
+JWTトークン認証  
+フロントエンドはlocalStorageでトークンを保持  
+
 ## 技術構成  
 ### フロントエンド  
 ・typescript  
@@ -17,6 +21,7 @@ laravelAPIとReactのViteを繋いだ環境です。
 
 ### バックエンド  
 ・laravel  
+・tymon/jwt-auth  
 
 ### その他  
 ・mysql  
