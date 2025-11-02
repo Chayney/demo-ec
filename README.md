@@ -1,9 +1,10 @@
 # Todoアプリ  
-laravelAPIとReactのViteを繋いだ環境です。  
-ダミーデータとTodo一覧を取得するAPIは既に用意されています。  
+laravelAPIとReactのViteを繋いだ環境です。   
 
 ## 認証方式  
 JWTトークン認証  
+https://manabupanda.net/practice_web_programming/php_laravel/laravel-react-jwt-authentication/  
+
 フロントエンドはlocalStorageでトークンを保持  
 
 ## 技術構成  
@@ -30,7 +31,7 @@ JWTトークン認証
 ## 環境構築
 
 ### コマンドライン上
-$git clone https://github.com/Chayney/todo-getonly.git  
+$git clone https://github.com/Chayney/authjwt-todo.git   
 $docker-compose up -d --build  
 $docker-compose exec php bash
 
@@ -42,8 +43,13 @@ $cp .env.example .env
 
 ### PHPコンテナ内
 $php artisan key:generate  
+$php artisan jwt:secret  
 $php artisan migrate  
 $php artisan db:seed  
+
+### クロスオリジン  
+config/cors.php  
+'allowed_origins' => ['http://localhost:5173']  
 
 ### react上  
 $cp .env.example .env  
