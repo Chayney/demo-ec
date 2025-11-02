@@ -1,0 +1,13 @@
+.container {
+    margin: 5% auto 0 auto;
+    width: 80%;
+}
+
+.title {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.header {
+    width: 100%;
+}
