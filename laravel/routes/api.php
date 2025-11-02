@@ -24,4 +24,9 @@ Route::middleware('jwt.auth')->group(function () {
     Route::post('/authentication', [AuthController::class, 'check']);
 
     Route::get('/todos', [TodoController::class, 'index']);
+    Route::get('/detail', [TodoController::class, 'detail']);
+    Route::get('/edit', [TodoController::class, 'edit']);
+    Route::put('/edit', [TodoController::class, 'update']);
+    Route::post('/create', [TodoController::class, 'store']);
+    Route::delete('/delete', [TodoController::class, 'destroy']);
 });
