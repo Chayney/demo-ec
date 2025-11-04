@@ -8,7 +8,7 @@ export const Navigation = () => {
 
     return (
         <div className={styles.header}>
-            <h1 className={styles.title}>Todo List</h1>
+            <h1 className={styles.title}>Demo</h1>
             <nav className={styles.nav}>
                 <ul className={styles.ul}>
                     <NavigationLink linkPath={NAVIGATION_LIST.TOP} label="TOP" />
