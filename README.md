@@ -1,4 +1,4 @@
-# Todoアプリ  
+# ECサイト  
 laravelAPIとReactのViteを繋いだ環境です。   
 
 ## 認証方式  
@@ -31,7 +31,7 @@ https://manabupanda.net/practice_web_programming/php_laravel/laravel-react-jwt-a
 ## 環境構築
 
 ### コマンドライン上
-$git clone https://github.com/Chayney/authjwt-todo.git   
+$git clone https://github.com/Chayney/demo-ec.git    
 $docker-compose up -d --build  
 $docker-compose exec php bash
 
@@ -63,4 +63,4 @@ $cp .env.example .env
 ・phpMyAdmin: http://localhost:8080  
 ・ユーザー登録ページ: http://localhost:5173/signup  
 ・ユーザーログインページ: http://localhost:5173/signin  
-・ログインユーザーのTodo一覧ページ: http://localhost:5173/todos  
+・商品一覧ページ: http://localhost:5173/products  
