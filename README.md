@@ -15,6 +15,7 @@ https://manabupanda.net/practice_web_programming/php_laravel/laravel-react-jwt-a
 ・react-route  
 ・react-hook-form  
 ・zod  
+・storybook  
 ・@hookform/resolvers  
 ・@tanstack/react-query  
 ・@fortawesome/react-fontawesom  
