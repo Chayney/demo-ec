@@ -14,7 +14,7 @@ export const useAuth = () => {
     const isAuth = !!authData?.user;
 
     // 認証判定用
-    const { pathname } = useLocation();
+    // const { pathname } = useLocation();
 
     const signin = useCallback(
         (user: UserType, token: string) => {
@@ -42,19 +42,19 @@ export const useAuth = () => {
         }, [navigate, queryClient]
     )
 
-    const checkEntication = useCallback(
-        () =>  pathname === NAVIGATION_LIST.SIGNUP || pathname === NAVIGATION_LIST.SIGNIN, [pathname]
-    )
+    // const checkEntication = useCallback(
+    //     () =>  pathname === NAVIGATION_LIST.SIGNUP || pathname === NAVIGATION_LIST.SIGNIN, [pathname]
+    // )
 
-    useEffect(() => {
-        if (isLoading) return;
+    // useEffect(() => {
+    //     if (isLoading) return;
 
-        // 未ログインでTOP画面に遷移出来ないよう制御
-        if (!isAuth && !checkEntication()) navigate(NAVIGATION_LIST.SIGNIN);
+    //     // 未ログインでTOP画面に遷移出来ないよう制御
+    //     if (!isAuth && !checkEntication()) navigate(NAVIGATION_LIST.SIGNIN);
         
-        // ログイン済みでSignin画面に遷移出来ないよう制御
-        if (isAuth && checkEntication()) navigate(NAVIGATION_LIST.TOP);
-    })
+    //     // ログイン済みでSignin画面に遷移出来ないよう制御
+    //     if (isAuth && checkEntication()) navigate(NAVIGATION_LIST.TOP);
+    // })
 
     return {
         user,

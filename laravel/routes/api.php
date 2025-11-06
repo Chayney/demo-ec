@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\TodoController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +19,12 @@ use App\Http\Controllers\TodoController;
 Route::post('/signup', [AuthController::class, 'register']);
 Route::post('/signin', [AuthController::class, 'login']);
 
+Route::get('/products', [ProductController::class, 'index']);
+
 Route::middleware('jwt.auth')->group(function () {
     Route::post('/signout', [AuthController::class, 'logout']);
     Route::post('/authentication', [AuthController::class, 'check']);
 
-    Route::get('/todos', [TodoController::class, 'index']);
-    Route::get('/detail', [TodoController::class, 'detail']);
-    Route::get('/edit', [TodoController::class, 'edit']);
-    Route::put('/edit', [TodoController::class, 'update']);
-    Route::post('/create', [TodoController::class, 'store']);
-    Route::delete('/delete', [TodoController::class, 'destroy']);
+    
+    
 });
