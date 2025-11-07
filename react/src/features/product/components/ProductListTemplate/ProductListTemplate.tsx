@@ -1,10 +1,18 @@
-import { BaseLayout } from "../../../../shared/components/layouts/BaseLayout/BaseLayout"
+import { PuffLoader } from "react-spinners";
+import { ProductList } from "../ProductList/ProductList"
+import { useProductListTemplate } from "./useProductListTemplate"
 
 export const ProductListTemplate = () => {
-    const imageUrl = "http://localhost/images/product1.jpg";
+    const { productList, isLoading } = useProductListTemplate();
+
+    if (isLoading) {
+        return <PuffLoader />
+    }
     return (
-        <BaseLayout title="Product List">
-            <img src={imageUrl} alt="Sample" />;
-        </BaseLayout>
+        <>
+            {productList.length > 0 && (
+                <ProductList productList={productList} />
+            )}
+        </>
     )
 }
