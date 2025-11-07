@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +19,8 @@ use App\Http\Controllers\ProductController;
 Route::post('/signup', [AuthController::class, 'register']);
 Route::post('/signin', [AuthController::class, 'login']);
 
-Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products', [ItemController::class, 'index']);
+Route::get('/product/{id}', [ItemController::class, 'detail']);
 
 Route::middleware('jwt.auth')->group(function () {
     Route::post('/signout', [AuthController::class, 'logout']);
