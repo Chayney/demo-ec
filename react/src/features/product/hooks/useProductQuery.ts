@@ -4,7 +4,7 @@ import { getProduct } from "../api/product"
 export const useProductQuery = (id: number) => {
     return useQuery({
         queryKey: ['products', id],
-        queryFn: () => getProduct(id),
+        queryFn: () => getProduct({ id }),
         enabled: !!id
     })
 }

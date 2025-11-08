@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.star {
+    transition: transform 0.15s ease;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    transform: scale(1.2);
+}

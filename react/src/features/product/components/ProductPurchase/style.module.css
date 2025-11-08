@@ -1,0 +1,64 @@
+.parentContainer {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.childLeftContainer {
+    display: flex;
+    flex-wrap: wrap;
+    background: aqua;
+    height: auto;
+    width: 45%;
+    border-radius: 10px;
+    margin: 3%;
+    padding: 20px;
+    z-index: 10;
+}
+
+.childRightContainer {
+    width: 35%;
+    height: 300px;
+    color: #000;
+    padding: 20px;
+}
+
+.itemGroup {
+    display: flex;
+    gap: 50px;
+    height: auto;
+    width: 100%;
+}
+
+.imgGroup {
+    width: 50%;
+}
+
+.img {
+    width: 100%;
+}
+
+.nameGroup {
+    width: 20%;
+}
+
+.payGroup {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 5% 0;
+}
+
+.addressGroup {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 5% 0;
+}
+
+.priceGroup {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 5% 0;
+}

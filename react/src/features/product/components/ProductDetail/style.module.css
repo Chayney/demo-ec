@@ -1,24 +1,48 @@
 .parentContainer {
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
     margin: 0 auto;
 }
 
 .childLeftContainer {
     background: white;
-    height: 100px;
+    height: auto;
     width: 45%;
     border-radius: 10px;
     margin: 3%;
     padding: 20px;
-    position: relative;
     z-index: 10;
 }
 
 .childRightContainer {
-    width: 40%;
+    width: 35%;
     height: 300px;
     color: #000;
+    padding: 20px;
     position: relative;
+}
+
+.img {
+    width: 100%;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.iconGroup {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    height: 50px;
+    margin: 3% 0;
+}
+
+.infoGroup {
+    margin-top: 10%;
+}
+
+.tag {
+    margin-right: 2%;
 }
