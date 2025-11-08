@@ -5,14 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
+use App\Models\Profile;
 
 class ItemController extends Controller
 {
     public function index()
     {
         $user = Auth::user();
-        if ($user) {
-            $products = Item::where('user_id', $user->id)->get();
+        if ($user && $user->userProfile) {
+            $profile = Profile::where('user_id', $user->id)->first(['id']);
+            $favorites = $profile->profileFavorites()->pluck('item_id')->toArray();
+            $favoriteProducts = Item::whereIn('id', $favorites)->get();
+            $products = Item::all();
         } else {
             $products = Item::all();
         }
@@ -22,12 +26,7 @@ class ItemController extends Controller
 
     public function detail($id)
     {
-        $user = Auth::user();
-        if ($user) {
-            $product = Item::where('user_id', $user->id)->get();
-        } else {
-            $product = Item::find($id);
-        }
+        $product = Item::with(['elements','condition'])->where('id', $id)->first();
         
         return response()->json($product, 200);
     }
