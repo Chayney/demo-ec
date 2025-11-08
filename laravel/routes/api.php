@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::middleware('jwt.auth')->group(function () {
     Route::post('/signout', [AuthController::class, 'logout']);
     Route::post('/authentication', [AuthController::class, 'check']);
 
-    
+    Route::get('/purchase/{id}', [ItemController::class, 'confirm']);
+    Route::get('/address', [ProfileController::class, 'show']);
+    Route::put('/address', [ProfileController::class, 'edit']);
     
 });

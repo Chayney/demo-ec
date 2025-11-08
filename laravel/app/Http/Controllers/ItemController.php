@@ -30,4 +30,11 @@ class ItemController extends Controller
         
         return response()->json($product, 200);
     }
+
+    public function confirm($id)
+    {
+        $product = Item::find($id);
+        
+        return response()->json($product, 200);
+    }
 }
