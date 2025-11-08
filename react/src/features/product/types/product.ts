@@ -34,5 +34,8 @@ export type ProductType = ItemType & {
 }
 
 export type GetProductRequest = {
-    id: number
+    id: number,
+    // purchaseはログインユーザーのみ
+    // デフォルトはproduct
+    type?: 'product' | 'purchase'
 }

@@ -8,5 +8,6 @@ export const getProducts = async (): Promise<ProductType[]> => {
 export const getProduct = async (
     request: GetProductRequest
 ): Promise<ProductType> => {
-    return await apiClient<ProductType>(`/product/${request.id}`, { method: 'GET' });
+    const basePath = request.type === 'purchase' ? '/purchase' : '/product'
+    return await apiClient<ProductType>(`${basePath}/${request.id}`, { method: 'GET' });
 }

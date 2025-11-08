@@ -6,7 +6,7 @@ import { ProductPurchase } from "../ProductPurchase/ProductPurchase";
 export const ProductPurchaseTemplate = () => {
     const { id } = useParams();
     const { data: product, isLoading } = useProductQuery(Number(id));
-
+    
     if (isLoading) {
         return <PuffLoader />
     }

@@ -1,14 +1,9 @@
 import { useCallback, type FC } from "react"
 import type { ProductType } from "../../types/product"
 import styles from './style.module.css'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
-import { faComment } from "@fortawesome/free-solid-svg-icons";
 import { CommonButton } from "../../../../shared/components/ui/CommonButton/CommonButton";
-import { CommonTag } from "../../../../shared/components/ui/CommonTag/CommonTag";
 import { useNavigate } from "react-router-dom";
 import { NAVIGATION_PATH } from "../../../../shared/constants/navigation";
-import { useAuthContext } from "../../../auth/hooks/useAuthContext";
 
 type ProductPurchaseProps = {
     product: ProductType
@@ -16,8 +11,12 @@ type ProductPurchaseProps = {
 
 export const ProductPurchase: FC<ProductPurchaseProps> = (props) => {
     const { product } = props;
-    const { isAuth } = useAuthContext();
     const navigate = useNavigate();
+
+    const handleMoveAddressPage = useCallback(
+        // product.idを付与
+        () => navigate(`${NAVIGATION_PATH.ADDRESS}?id=${product.id}`), [navigate, product.id]
+    );
 
     return (
         <div className={styles.parentContainer}>
@@ -43,9 +42,9 @@ export const ProductPurchase: FC<ProductPurchaseProps> = (props) => {
                 </div>
                 <div className={styles.addressGroup}>
                     <span className={styles.addressLabel}>配送先</span>
-                    <form action="/purchase/address/{item_id}" method="get">
+                    <button onClick={handleMoveAddressPage}>
                         変更する
-                    </form>
+                    </button>
                 </div>
             </div>
             <div className={styles.childRightContainer}>
