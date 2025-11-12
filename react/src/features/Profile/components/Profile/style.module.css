@@ -1,0 +1,91 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.topContainer {
+    width: 100%;
+    margin: 3% auto;
+}
+
+.profileGroup {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    margin: 3% 0;
+}
+
+.profileImg {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.profileName {
+    font-size: 30px;
+}
+
+.button {
+    height: 50px;
+}
+
+.tabContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab {
+    height: 50px;
+    width: 20%;
+    border-radius: 5px;
+    border: none;
+}
+
+.activeTab {
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    background-color: #99ffff;
+}
+
+.underContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.childContainer {
+    background: #fff;
+    height: 300px;
+    width: 20%;
+    border-radius: 10px;
+    position: relative;
+    z-index: 10;
+    border: 1px solid #000;
+    margin: 2%;
+}
+
+.img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    z-index: 11;
+    object-fit: cover;
+}
+
+.name {
+    position: absolute;
+    top: 210px;
+    left: 15px;
+}
+
+.price {
+    position: absolute;
+    top: 250px;
+    left: 10px;
+}

@@ -3,7 +3,7 @@ import { PuffLoader } from "react-spinners";
 import { ProfileAddress } from "../ProfileAddress/ProfileAddress";
 
 export const ProfileAddressTemplate = () => {
-    const { data: profile, isLoading } = useProfileQuery();
+    const { data: profile, isLoading } = useProfileQuery('address');
 
     if (isLoading) {
         return <PuffLoader />

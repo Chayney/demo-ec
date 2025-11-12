@@ -8,7 +8,9 @@ export const Navigation = () => {
 
     return (
         <div className={styles.header}>
-            <h1 className={styles.title}>Demo</h1>
+            <a className={styles.toplink} href={NAVIGATION_LIST.TOP}>
+                <h1 className={styles.title}>Demo</h1>
+            </a>
             <nav className={styles.nav}>
                 <ul className={styles.ul}>
                     {!isAuth && (

@@ -6,6 +6,10 @@
     background: rgba(0, 0, 0, 0.2);
 }
 
+.toplink {
+    text-decoration: none;
+}
+
 .title {
     padding-left: 70px;
     color: #fff;

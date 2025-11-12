@@ -1,4 +1,5 @@
 export const BASE_API_URL = import.meta.env.VITE_REACT_APP_API_URL;
+export const STORAGE_BASE_URL = import.meta.env.VITE_REACT_STORAGE_BASE_URL;
 
 // トークン取得
 export const getToken = (): string | null => {
@@ -23,7 +24,7 @@ export const apiClient = async <T>(
     const token = getToken();
 
     const headers: HeadersInit = {
-        'Content-Type': 'application/json',
+        ...(options.body instanceof FormData ? {} : { 'Content-Type': 'application/json' }),
         ...(options.headers || {}),
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
     };

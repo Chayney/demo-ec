@@ -6,7 +6,9 @@ export const NAVIGATION_LIST = {
     PURCHASE: '/purchase/:id',
     SELL: '/sell',
     MYPAGE: '/mypage',
-    ADDRESS: '/address'
+    EDIT: '/edit',
+    ADDRESS: '/address',
+    PAY: '/pay',
 }
 
 export const NAVIGATION_PATH = {
@@ -17,5 +19,7 @@ export const NAVIGATION_PATH = {
     PURCHASE: '/purchase',
     SELL: '/sell',
     MYPAGE: '/mypage',
-    ADDRESS: '/address'
+    EDIT: '/edit',
+    ADDRESS: '/address',
+    PAY: '/pay',
 }

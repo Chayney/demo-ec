@@ -4,19 +4,32 @@ import styles from './style.module.css'
 import { CommonButton } from "../../../../shared/components/ui/CommonButton/CommonButton";
 import { useNavigate } from "react-router-dom";
 import { NAVIGATION_PATH } from "../../../../shared/constants/navigation";
+import type { ProfileType } from "../../../Profile/types/profile";
 
 type ProductPurchaseProps = {
-    product: ProductType
+    product: ProductType,
+    profile: ProfileType
 }
 
 export const ProductPurchase: FC<ProductPurchaseProps> = (props) => {
-    const { product } = props;
+    const { product, profile } = props;
     const navigate = useNavigate();
+
+    const handleMovePayPage = useCallback(
+        // product.idを付与
+        () => navigate(`${NAVIGATION_PATH.PAY}?id=${product.id}`), [navigate, product.id]
+    );
 
     const handleMoveAddressPage = useCallback(
         // product.idを付与
         () => navigate(`${NAVIGATION_PATH.ADDRESS}?id=${product.id}`), [navigate, product.id]
     );
+
+    const payLabels: Record<number, string> = {
+        1: "クレジットカード",
+        2: "銀行振込",
+        3: "代金引換",
+    };
 
     return (
         <div className={styles.parentContainer}>
@@ -36,27 +49,27 @@ export const ProductPurchase: FC<ProductPurchaseProps> = (props) => {
                 </div>
                 <div className={styles.payGroup}>
                     <span className={styles.payLabel}>支払い方法</span>
-                    <form action="/purchase/pay/{item_id}" method="get">
-                        変更する
-                    </form>
+                    <a href={`${NAVIGATION_PATH.PAY}?id=${product.id}`} onClick={handleMovePayPage}>変更する</a>
                 </div>
                 <div className={styles.addressGroup}>
                     <span className={styles.addressLabel}>配送先</span>
-                    <button onClick={handleMoveAddressPage}>
-                        変更する
-                    </button>
+                    <a href={`${NAVIGATION_PATH.ADDRESS}?id=${product.id}`} onClick={handleMoveAddressPage}>変更する</a>
                 </div>
             </div>
             <div className={styles.childRightContainer}>
-                <div className={styles.priceGroup}>
-                    <span className={styles.priceLabel}>商品代金</span>
-                    <span className={styles.name}>￥{product.price}</span>
+                <div className={styles.commonGroup}>
+                    <span className={styles.commonLabel}>商品代金</span>
+                    <span className={styles.commonName}>￥{product.price}</span>
                 </div>
-                <div className={styles.payGroup}>
-                    <p className="">支払い金額</p>
+                <div className={styles.commonGroup}>
+                    <span className={styles.commonLabel}>支払金額</span>
+                    {profile.pay === 1 && (
+                        <span className={styles.commonName}>￥{product.price}</span>
+                    )}
                 </div>
-                <div className={styles.payGroup}>
-                    <p className="">支払い方法</p>
+                <div className={styles.commonGroup}>
+                    <span className={styles.commonLabel}>支払方法</span> 
+                    <span className={styles.commonName}>{payLabels[profile.pay] || ""}</span>
                 </div>
                 <CommonButton type="submit">購入する</CommonButton>
             </div>
