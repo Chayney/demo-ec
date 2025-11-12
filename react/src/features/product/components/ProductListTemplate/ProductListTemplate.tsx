@@ -4,7 +4,7 @@ import { useProductListTemplate } from "./useProductListTemplate"
 
 export const ProductListTemplate = () => {
     const { productList, isLoading } = useProductListTemplate();
-    
+
     if (isLoading) {
         return <PuffLoader />
     }
