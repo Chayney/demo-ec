@@ -16,6 +16,8 @@ https://manabupanda.net/practice_web_programming/php_laravel/laravel-react-jwt-a
 ・react-hook-form  
 ・zod  
 ・storybook  
+・ESlint  
+・Prettier  
 ・@hookform/resolvers  
 ・@tanstack/react-query  
 ・@fortawesome/react-fontawesom  
