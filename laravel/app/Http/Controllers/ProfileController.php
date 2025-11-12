@@ -58,8 +58,8 @@ class ProfileController extends Controller
         $file = $request->file('file');
 
         // storage/app/public/images に保存
-        $path = $file->store('images', 'public'); // images/product1.jpg
-
+        $path = $file->store('images', 'public');
+        
         $profile = Profile::where('user_id', $user->id)->first();
         $profile->image = $path;
         $profile->save();
