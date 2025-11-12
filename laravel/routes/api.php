@@ -27,8 +27,17 @@ Route::middleware('jwt.auth')->group(function () {
     Route::post('/signout', [AuthController::class, 'logout']);
     Route::post('/authentication', [AuthController::class, 'check']);
 
+    Route::get('/mypage', [ProfileController::class, 'index']);
+    Route::get('/edit', [ProfileController::class, 'list']);
+    Route::put('/edit', [ProfileController::class, 'upload']);
+
+    // 画像アップロード専用
+    Route::post('/upload', [ProfileController::class, 'uploadImage']);
+
     Route::get('/purchase/{id}', [ItemController::class, 'confirm']);
     Route::get('/address', [ProfileController::class, 'show']);
     Route::put('/address', [ProfileController::class, 'edit']);
+    Route::get('/pay', [ProfileController::class, 'look']);
+    Route::put('/pay', [ProfileController::class, 'update']);
     
 });

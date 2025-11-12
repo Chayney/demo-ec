@@ -33,4 +33,16 @@ class Profile extends Model
     {
         return $this->hasMany(Purchase::class);
     }
+
+    // JSON出力時に自動で含める
+    protected $appends = ['image_url'];
+
+    // 画像の絶対URLを返すアクセサ
+    public function getImageUrlAttribute()
+    {
+        if ($this->image) {
+            return asset($this->image);
+        }
+        return null;
+    }
 }
