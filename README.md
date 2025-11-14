@@ -63,7 +63,7 @@ $cp .env.example .env
 ・password: password  
 
 ## URL
-・laravel-api: http://localhost/api/todos    
+・laravel-api: http://localhost/api/products    
 ・phpMyAdmin: http://localhost:8080  
 ・ユーザー登録ページ: http://localhost:5173/signup  
 ・ユーザーログインページ: http://localhost:5173/signin  
