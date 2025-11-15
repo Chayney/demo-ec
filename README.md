@@ -18,6 +18,8 @@ https://manabupanda.net/practice_web_programming/php_laravel/laravel-react-jwt-a
 ・storybook  
 ・ESlint  
 ・Prettier  
+・vitest  
+・testing library  
 ・@hookform/resolvers  
 ・@tanstack/react-query  
 ・@fortawesome/react-fontawesom  
@@ -49,6 +51,7 @@ $php artisan key:generate
 $php artisan jwt:secret  
 $php artisan migrate  
 $php artisan db:seed  
+$php artisan storage:link  
 
 ### クロスオリジン  
 config/cors.php  
@@ -62,7 +65,7 @@ $cp .env.example .env
 ・password: password  
 
 ## URL
-・laravel-api: http://localhost/api/todos    
+・laravel-api: http://localhost/api/products    
 ・phpMyAdmin: http://localhost:8080  
 ・ユーザー登録ページ: http://localhost:5173/signup  
 ・ユーザーログインページ: http://localhost:5173/signin  
