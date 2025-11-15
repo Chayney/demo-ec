@@ -1,7 +1,7 @@
 import { useQueryClient } from "@tanstack/react-query";
-import { useLocation, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useCheckEnticationQuery } from "./useCheckEnticationQuery";
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import type { UserType } from "../types/auth";
 import { NAVIGATION_LIST } from "../../../shared/constants/navigation";
 
@@ -12,9 +12,6 @@ export const useAuth = () => {
     const { data: authData, isLoading } = useCheckEnticationQuery();
     const user = authData?.user || null;
     const isAuth = !!authData?.user;
-
-    // 認証判定用
-    // const { pathname } = useLocation();
 
     const signin = useCallback(
         (user: UserType, token: string) => {
@@ -41,20 +38,6 @@ export const useAuth = () => {
             navigate(NAVIGATION_LIST.SIGNIN);
         }, [navigate, queryClient]
     )
-
-    // const checkEntication = useCallback(
-    //     () =>  pathname === NAVIGATION_LIST.SIGNUP || pathname === NAVIGATION_LIST.SIGNIN, [pathname]
-    // )
-
-    // useEffect(() => {
-    //     if (isLoading) return;
-
-    //     // 未ログインでTOP画面に遷移出来ないよう制御
-    //     if (!isAuth && !checkEntication()) navigate(NAVIGATION_LIST.SIGNIN);
-        
-    //     // ログイン済みでSignin画面に遷移出来ないよう制御
-    //     if (isAuth && checkEntication()) navigate(NAVIGATION_LIST.TOP);
-    // })
 
     return {
         user,
