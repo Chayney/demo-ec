@@ -18,6 +18,8 @@ https://manabupanda.net/practice_web_programming/php_laravel/laravel-react-jwt-a
 ・storybook  
 ・ESlint  
 ・Prettier  
+・vitest  
+・testing library  
 ・@hookform/resolvers  
 ・@tanstack/react-query  
 ・@fortawesome/react-fontawesom  
