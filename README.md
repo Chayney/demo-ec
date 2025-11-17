@@ -20,6 +20,7 @@ https://manabupanda.net/practice_web_programming/php_laravel/laravel-react-jwt-a
 ・Prettier  
 ・vitest  
 ・testing library  
+・github actions  
 ・@hookform/resolvers  
 ・@tanstack/react-query  
 ・@fortawesome/react-fontawesom  
