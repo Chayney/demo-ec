@@ -1,19 +1,19 @@
 .error {
-    color: red;
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-top: 0.2rem;
+	color: red;
+	font-size: 0.8rem;
+	font-weight: 700;
+	margin-top: 0.2rem;
 }
 
 .radioWrapper {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 8px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 8px;
 }
 
 .radioLabel {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	cursor: pointer;
 }

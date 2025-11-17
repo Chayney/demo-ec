@@ -1,15 +1,15 @@
 .input {
-    background: #ffffff;
-    width: 5%;
-    height: 50px;
-    padding: 10px;
-    box-sizing: border-box;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    border-radius: 5px;
-    border: 1px solid #000;
+	background: #ffffff;
+	width: 5%;
+	height: 50px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 20px;
+	font-family: 'Times New Roman', Times, serif;
+	border-radius: 5px;
+	border: 1px solid #000;
 }
 
 .input::placeholder {
-    color: #c0c0c0;
+	color: #c0c0c0;
 }

@@ -1,18 +1,16 @@
-import type { ComponentProps, FC, ReactNode } from "react"
-import styles from './style.module.css'
+import type { ComponentProps, FC, ReactNode } from 'react';
+import styles from './style.module.css';
 
 type CommonButtonProps = ComponentProps<'button'> & {
-    children: ReactNode
-}
+	children: ReactNode;
+};
 
 export const CommonButton: FC<CommonButtonProps> = (props) => {
-    const {
-        type,
-        onClick,
-        children
-    } = props;
+	const { type, onClick, children } = props;
 
-    return (
-        <button className={styles.button} type={type} onClick={onClick}>{children}</button>
-    )
-}
+	return (
+		<button className={styles.button} type={type} onClick={onClick}>
+			{children}
+		</button>
+	);
+};

@@ -1,13 +1,11 @@
-import type { ComponentProps, FC } from 'react'
+import type { ComponentProps, FC } from 'react';
 
 type Props = ComponentProps<'textarea'> & {
-    style?: React.CSSProperties
-}
+	style?: React.CSSProperties;
+};
 
 export const TextArea: FC<Props> = (props) => {
-    const { style, placeholder } = props;
+	const { style, placeholder } = props;
 
-    return (
-        <textarea style={style} placeholder={placeholder} />
-    )
-}
+	return <textarea style={style} placeholder={placeholder} />;
+};

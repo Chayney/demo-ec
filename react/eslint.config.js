@@ -8,32 +8,32 @@ import prettierPlugin from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
 
 export default [
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-      },
-    },
-    plugins: {
-      '@typescript-eslint': tseslint,
-      prettier: prettierPlugin,
-    },
-    rules: {
-      // extends廃止によって自分でルールを展開
-      ...tseslint.configs.recommended.rules,
+	{
+		files: ['**/*.ts', '**/*.tsx'],
+		languageOptions: {
+			parser: tsParser,
+			parserOptions: {
+				ecmaVersion: 'latest',
+				sourceType: 'module',
+			},
+		},
+		plugins: {
+			'@typescript-eslint': tseslint,
+			prettier: prettierPlugin,
+		},
+		rules: {
+			// extends廃止によって自分でルールを展開
+			...tseslint.configs.recommended.rules,
 
-      // Prettier競合無効化
-      ...prettierConfig.rules,
+			// Prettier競合無効化
+			...prettierConfig.rules,
 
-      // PrettierのフォーマットエラーをESLintに反映
-      'prettier/prettier': 'warn',
+			// PrettierのフォーマットエラーをESLintに反映
+			'prettier/prettier': 'warn',
 
-      // 好みで追加
-      // 未使用の変数に警告
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-    },
-  },
+			// 好みで追加
+			// 未使用の変数に警告
+			'@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+		},
+	},
 ];

@@ -1,14 +1,12 @@
-import type { FC, ReactNode } from "react"
-import styles from './style.module.css'
+import type { FC, ReactNode } from 'react';
+import styles from './style.module.css';
 
 type CommonTagProps = {
-    children: ReactNode
-}
+	children: ReactNode;
+};
 
 export const CommonTag: FC<CommonTagProps> = (props) => {
-    const {children} = props;
+	const { children } = props;
 
-    return (
-        <span className={styles.tag}>{children}</span>
-    )
-}
+	return <span className={styles.tag}>{children}</span>;
+};

@@ -1,7 +1,5 @@
-import { SignupTemplate } from "../features/auth/components/SignupTemplate/SignupTemplate"
+import { SignupTemplate } from '../features/auth/components/SignupTemplate/SignupTemplate';
 
 export const SignupPage = () => {
-    return (
-        <SignupTemplate />
-    )
-}
+	return <SignupTemplate />;
+};
