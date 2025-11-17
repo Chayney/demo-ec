@@ -21,17 +21,21 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
+        working-directory: ./react
         run: npm ci
 
       # ESLint
       - name: Run ESLint
+        working-directory: ./react
         run: npm run lint
 
       # Prettier
       - name: Run Prettier check
+        working-directory: ./react
         run: npm run prettier:check
 
       # Vitest (unit test)
       - name: Run Vitest
+        working-directory: ./react
         run: npm run test -- --run
 
