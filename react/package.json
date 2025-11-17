@@ -6,9 +6,9 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc -b && vite build",
-		"lint": "eslint react/src --ext .ts,.tsx",
-		"prettier:check": "prettier --check 'react/src/**/*.{ts,tsx,css}'",
-		"prettier:write": "prettier --write 'react/src/**/*.{ts,tsx,css}'",
+		"lint": "eslint src --ext .ts,.tsx",
+		"prettier:check": "prettier --check 'src/**/*.{ts,tsx,css}'",
+		"prettier:write": "prettier --write 'src/**/*.{ts,tsx,css}'",
 		"preview": "vite preview",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
