@@ -18,11 +18,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "false"
+          cache: "npm"
 
       - name: Install dependencies
-        working-directory: ./react
         run: npm ci
+        working-directory: ./react
 
       # ESLint
       - name: Run ESLint
