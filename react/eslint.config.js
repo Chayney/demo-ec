@@ -8,7 +8,9 @@ import prettierPlugin from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
 
 export default [
-	{
+  {
+    // .eslintignoreの代替
+    ignores: ['dist/**', 'node_modules/**'],
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
 		languageOptions: {
 			parser: tsParser,
