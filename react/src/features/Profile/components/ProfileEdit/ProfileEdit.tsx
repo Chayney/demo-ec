@@ -18,11 +18,18 @@ export const ProfileEdit: FC<ProfileEditProps> = ({ profile }) => {
 	const fileInputRef = useRef<HTMLInputElement | null>(null);
 
 	const getImageUrl = (previewUrl: string) => {
-		if (previewUrl.includes(STORAGE_BASE_URL)) {
+		if (!previewUrl) return;
+		
+		// 画像アップロード時
+		if (previewUrl.startsWith('blob:')) return previewUrl;
+		
+		// pathにprofileという文字列が含まれていればそのまま返却
+		if (previewUrl.includes("profile")) {
 			return previewUrl;
-		} else {
-			return `${STORAGE_BASE_URL}/${profile.image}`;
 		}
+
+		// アップロード画像のURLを返す
+		return `${STORAGE_BASE_URL}/${profile.image}`;
 	};
 
 	return (

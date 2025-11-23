@@ -20,18 +20,41 @@ export const Profile: FC<ProfileProps> = (props) => {
 	// タブ切り替え用state
 	const [activeTab, setActiveTab] = useState<Tab>('items');
 
-	// 表示する商品の配列を切り替える
-	const displayedItems = activeTab === 'items' ? items : purchaseItems;
+	// itemsを展開してimage_urlを付与した新しい配列を作成
+	const processedItems = items.map(item => {
+		let image_url = '';
 
+		if (item.image.includes('product')) {
+			// ダミーデータの場合はそのまま
+			image_url = item.image_url || item.image;
+		} else {
+			// 新規アップロード画像の場合
+			image_url = `${STORAGE_BASE_URL}/${item.image}`;
+		}
+
+		return {
+			...item,
+			image_url,
+		};
+	});
+
+	// 表示する商品の配列を切り替える
+	const displayedItems = activeTab === 'items' ? processedItems : purchaseItems;
+	
 	const navigate = useNavigate();
 
 	const handleMoveEditPage = useCallback(() => navigate(`${NAVIGATION_PATH.EDIT}`), [navigate]);
 
+	// プロフィール画像
 	const getImageUrl = (path: string | undefined) => {
-		if (!path) return '/no-image.jpg';
+		if (!path) return;
+		
+		// pathにprofileという文字列が含まれていればそのまま返却
+		if (path.includes("profile")) {
+			return path;
+		}
 
-		if (path.includes(STORAGE_BASE_URL)) return path;
-
+		// アップロード画像のURLを返す
 		return `${STORAGE_BASE_URL}/${profile.image}`;
 	};
 

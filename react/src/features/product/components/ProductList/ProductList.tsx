@@ -3,6 +3,7 @@ import type { ProductType } from '../../types/product';
 import styles from './style.module.css';
 import { useNavigate } from 'react-router-dom';
 import { NAVIGATION_PATH } from '../../../../shared/constants/navigation';
+import { STORAGE_BASE_URL } from '../../../../shared/api/apiClient';
 
 type ProductListProps = {
 	productList: ProductType[];
@@ -17,9 +18,26 @@ export const ProductList: FC<ProductListProps> = (props) => {
 		[navigate],
 	);
 
+	const processedItems = productList.map(item => {
+		let image_url = '';
+
+		if (item.image.includes('product')) {
+			// ダミーデータの場合はそのまま
+			image_url = item.image_url || item.image;
+		} else {
+			// 新規アップロード画像の場合
+			image_url = `${STORAGE_BASE_URL}/${item.image}`;
+		}
+
+		return {
+			...item,
+			image_url,
+		};
+	});
+
 	return (
 		<div className={styles.parentContainer}>
-			{productList.map((product) => (
+			{processedItems.map((product) => (
 				<div key={product.id} className={styles.childContainer}>
 					<a
 						href={`${NAVIGATION_PATH.DETAIL}/${product.id}`}

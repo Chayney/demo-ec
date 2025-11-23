@@ -1,0 +1,70 @@
+.container {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.area {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.areaTitle {
+    font-size: 25px;
+    font-weight: bold;
+    color: #cccccc;
+    border-bottom: 5px solid #cccccc;
+}
+
+.imageArea {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #ffccff;
+}
+
+.formTitle {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.previewImage {
+    width: 30%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.button {
+    display: block;
+    width: 30%;
+    background-color: #ffccff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+    appearance: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #ffcccc;
+}
+
+button:focus,
+input:focus {
+    outline: none;
+    box-shadow: none;
+}

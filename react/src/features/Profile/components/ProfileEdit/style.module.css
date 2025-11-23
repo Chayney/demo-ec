@@ -53,5 +53,4 @@ button:focus,
 input:focus {
 	outline: none;
 	box-shadow: none;
-	/* もしbox-shadowでフォーカススタイルを設定していたら */
 }

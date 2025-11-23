@@ -8,6 +8,7 @@ export const useProfileEditMutation = () => {
 	return useMutation({
 		mutationFn: (request: ProfileEditRequest) => editProfile(request),
 		onSuccess: () => {
+			queryClient.invalidateQueries({ queryKey: ['mypage'] });
 			queryClient.invalidateQueries({ queryKey: ['profiles'] });
 		},
 	});
