@@ -60,6 +60,7 @@ config/cors.php
 
 ### react上  
 $cp .env.example .env  
+$npm install 
 
 ## ダミーユーザー  
 ・email: test@example.com  
