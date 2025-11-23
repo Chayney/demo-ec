@@ -21,7 +21,7 @@ export const Profile: FC<ProfileProps> = (props) => {
 	const [activeTab, setActiveTab] = useState<Tab>('items');
 
 	// itemsを展開してimage_urlを付与した新しい配列を作成
-	const processedItems = items.map(item => {
+	const processedItems = items.map((item) => {
 		let image_url = '';
 
 		if (item.image.includes('product')) {
@@ -40,7 +40,7 @@ export const Profile: FC<ProfileProps> = (props) => {
 
 	// 表示する商品の配列を切り替える
 	const displayedItems = activeTab === 'items' ? processedItems : purchaseItems;
-	
+
 	const navigate = useNavigate();
 
 	const handleMoveEditPage = useCallback(() => navigate(`${NAVIGATION_PATH.EDIT}`), [navigate]);
@@ -48,9 +48,9 @@ export const Profile: FC<ProfileProps> = (props) => {
 	// プロフィール画像
 	const getImageUrl = (path: string | undefined) => {
 		if (!path) return;
-		
+
 		// pathにprofileという文字列が含まれていればそのまま返却
-		if (path.includes("profile")) {
+		if (path.includes('profile')) {
 			return path;
 		}
 

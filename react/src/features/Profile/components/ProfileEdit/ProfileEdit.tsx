@@ -19,12 +19,12 @@ export const ProfileEdit: FC<ProfileEditProps> = ({ profile }) => {
 
 	const getImageUrl = (previewUrl: string) => {
 		if (!previewUrl) return;
-		
+
 		// 画像アップロード時
 		if (previewUrl.startsWith('blob:')) return previewUrl;
-		
+
 		// pathにprofileという文字列が含まれていればそのまま返却
-		if (previewUrl.includes("profile")) {
+		if (previewUrl.includes('profile')) {
 			return previewUrl;
 		}
 

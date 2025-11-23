@@ -18,7 +18,7 @@ export const ProductList: FC<ProductListProps> = (props) => {
 		[navigate],
 	);
 
-	const processedItems = productList.map(item => {
+	const processedItems = productList.map((item) => {
 		let image_url = '';
 
 		if (item.image.includes('product')) {
