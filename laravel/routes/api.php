@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SellController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +31,13 @@ Route::middleware('jwt.auth')->group(function () {
     Route::get('/mypage', [ProfileController::class, 'index']);
     Route::get('/edit', [ProfileController::class, 'list']);
     Route::put('/edit', [ProfileController::class, 'upload']);
-
-    // 画像アップロード専用
+    // 画像アップロード(プロフィール専用)
     Route::post('/upload', [ProfileController::class, 'uploadImage']);
+
+    Route::get('/sell', [SellController::class, 'index']);
+    Route::post('/sell', [SellController::class, 'store']);
+    // 画像アップロード(出品専用)
+    Route::post('/sell/upload', [SellController::class, 'uploadImage']);
 
     Route::get('/purchase/{id}', [ItemController::class, 'confirm']);
     Route::get('/address', [ProfileController::class, 'show']);

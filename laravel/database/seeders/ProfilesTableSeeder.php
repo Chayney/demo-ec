@@ -16,7 +16,7 @@ class ProfilesTableSeeder extends Seeder
     {
         $param = [
             'user_id' => '1',
-            'image' => 'images/product1.jpg',
+            'image' => 'images/profile.jpg',
             'name' => 'test',
             'postcode' => '123-4567',
             'address' => '東京都',
